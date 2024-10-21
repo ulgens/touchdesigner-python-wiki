@@ -1,0 +1,152 @@
+__TOC__
+
+The following list of important Python classes and modules is roughly grouped together by subject. 
+
+[[:Category:Python Reference|Python Reference]] has an alphabetical list of all TouchDesigner Python pages on this wiki.
+
+=== Operator Related Classes ===
+The following classes are Python interfaces for operators and objects that operators use. Individual operator classes (e.g. [[TextTOP Class]] and [[RampTOP Class]]) are not listed but do exist in the [[Td Module|<code>td</code> module]], and links to each can be found [[:Category:Python Reference|here]] or by clicking on the Python Help button in their [[Parameter Dialog|parameter dialog]]. These classes are found in the [[Td Module|td module]] so do not need to be imported.
+*'''[[OP Class]]''' - a TouchDesigner [[Operator|operator]].
+** '''[[Connector Class]]''' - a wire connector for an OP. Lists of these can be found in <code>OP.inputConnectors</code> and <code>OP.outputConnectors</code>. Components also have <code>COMP.inputCOMPConnectors</code> and <code>COMP.outputCOMPConnectors</code>.
+**'''[[Page Class]]''' - a parameter page. Lists of these can be found in <code>OP.pages</code> and, on components and script operators, <code>OP.customPages</code>.
+**'''[[ParCollection Class]]''' (<code>OP.par</code>) - holds all the parameters for an OP.
+*** '''[[Par Class]]''' - an individual [[Parameter|parameter]].
+**'''[[ParGroupCollection Class]]''' (<code>OP.par</code>) - holds all the parameter groups for an OP.
+*** '''[[ParGroup Class]]''' - an individual [[ParGroup Class|parameter group]].
+**'''[[SequenceCollection Class]]''' (<code>OP.seq</code>) - holds all the sequences for an OP.
+*** '''[[Sequence Class]]''' - describes and controls a set of sequential parameters. Sequential parameters will have a reference to one of these objects in their <code>sequence</code> member.
+**** '''[[SequenceBlock Class]]''' - used to access the parGroups of a specific block (set of parGroups) in a sequence.
+**'''[[CHOP Class]]''' - subclass of OPs defining [[CHOP]] operators.
+***'''[[Channel Class]]''' - a [[Channel|channel]] object. Accessed through a CHOP index or other CHOP members such as <code>chan</code>, <code>chans</code> etc.
+***'''[[Segment Class]]''' - describes a single segment from a [[Timer CHOP]].
+**'''[[COMP Class]]''' - a subclass of OPs defining [[Component|component]] operators.
+***'''[[ObjectCOMP Class]]''' - a subclass of COMPs defining [[Object|Objects]], used to create and render 3D scenes.
+***'''[[PanelCOMP Class]]''' - a subclass of COMPS defining [[Panel Component|Panel Components]], used to create 2D UI elements.
+****'''[[Panel Class]]''' - a member of panelCOMPs containing all associated [[Panel Value|panel values]]. Accessed through <code>panelCOMP.panel</code>.
+*****'''[[PanelValue Class]]''' - individual [[Panel Value|panel values]]. Accessed through the <code>panel</code> member of panelCOMPS and also in callbacks in the [[Panel Execute DAT]].
+****'''[[ListAttributes Class]]''' - a collection of [[ListAttribute Class|list attributes]] used in a [[ListCOMP Class|ListCOMP]].
+*****'''[[ListAttribute Class]]''' - contains attributes defining a cell in a [[ListCOMP Class|ListCOMP]].
+****'''[[Actors Class]]''' - describes the set of all Actor COMPs used by the Bullet Solver COMP and Nvidia Flex Solver COMP. used in a [[BulletsolverCOMP Class|BulletsolverCOMP]] or [[FlexsolverCOMP Class|flexsolverCOMP]].
+****'''[[Bodies Class]]''' - a collection of [[Body Class|bodies]] used in an [[ActorCOMP Class|ActorCOMP]].
+*****'''[[Body Class]]''' - a single body (physics object) used in an [[ActorCOMP Class|ActorCOMP]].
+***'''[[VFS Class]]''' - a COMP's Virtual File System
+****'''[[VFSFile Class]]''' - a virtual file contained within a Virtual File System.
+**'''[[DAT Class]]''' - a subclass of OPs defining [[DAT]] operators.
+***'''[[Cell Class]]''' - defines an individual cell of a [[DAT]] table.
+***'''[[Peer Class]]''' - describes the network connection originating a message in the callback functions found in [[OSC In DAT|oscinDAT]], [[TCP/IP DAT|tcpipDAT]], [[UDP In DAT|udpinDAT]], [[UDT In DAT|udtinDAT]].
+**'''[[MAT Class]]''' - a subclass of OPs defining [[MAT]] operators.
+**'''[[SOP Class]]''' - a subclass of OPs defining [[SOP]] operators.
+***'''[[Attributes Class]]''' - a collection of SOP [[Attribute|attributes]]
+****'''[[Attribute Class]]''' - information about an entity such as its color, velocity, normal, and so on.
+*****'''[[AttributeData Class]]''' - contains specific geometric Attribute values, associated with a Prim Class, Point Class, or Vertex Class.
+***'''[[Group Class]]''' - describes groups lists of Prim Class or Point Class.
+***'''[[Points Class]]''' - a collection of [[Point Class|points]].
+****'''[[Point Class]]''' - a single geometry [[Point|point]].
+*****'''[[InputPoint Class]]''' - a special point object used in [[Point SOP]] parameters.
+***'''[[Prims Class]]''' - a collection of [[Prim Class|primitives]].
+****'''[[Prim Class]]''' - a single geometry [[Primitive|primitive]].
+*****'''[[Poly Class]]''' - a subclass of Prim defining a geometry [[Polygon|polygon]].
+*****'''[[Mesh Class]]''' - a subclass of Prim defining a geometry [[Mesh|mesh]].
+*****'''[[Bezier Class]]''' - a subclass of Prim defining a set of Bezier curves.
+*****'''[[Vertex Class]]''' - a member of Prim defining a single geometry [[Vertex|vertex]]. 
+**'''[[TOP Class]]''' - a subclass of OPs defining [[TOP]] operators.
+***'''[[CUDAMemory Class]]''' - holds a reference to CUDA memory.
+****'''[[CUDAMemoryShape Class]]''' - describes the shape of a CUDA memory segment.
+***'''[[TextLine Class]]''' - a line of text in the [[Text TOP]] or [[Text SOP]], after it has been formatted. Contains various members about the line such as it's text, position etc.
+
+=== Helper Classes ===
+The following helper objects are part of the [[Td Module|td module]] and can thus be accessed anywhere, including expressions, without imports (e.g. <code>absTime.frame</code>). 
+*'''[[AbsTime Class]]''' (<code>absTime</code>) - information about [[Absolute_Time|absolute time]]
+*'''[[App Class]]''' (<code>app</code>) - information about the TouchDesigner app, including version, installation folders, etc.
+*'''[[Project Class]]''' (<code>project</code>) - information about the current TouchDesigner session
+*'''[[Tdu Module]]''' (<code>tdu</code>) - generic utilities for TouchDesigner not relating directly to TD objects. 
+**'''[[ArcBall Class]]''' (<code>tdu.ArcBall</code>) - encapsulates many aspects of 3D viewer interaction.
+**'''[[Camera Class]]''' (<code>tdu.Camera</code>) - maintains a 3D position and orientation for a camera and provides multiple methods for manipulating the camera's position and direction.
+**'''[[Color Class]]''' (<code>tdu.Color</code>) - holds a 4 component color
+**'''[[Dependency Class]]''' (<code>tdu.Dependency</code>) - used to create [[Dependency|Dependable]] Python data.
+**'''[[Matrix Class]]''' (<code>tdu.Matrix</code>) - holds a single 4x4 matrix for use in transformations. See [[ObjectCOMP Class]] for transforms of 3D objects.
+**'''[[Position Class]]''' (<code>tdu.Position</code>) - holds a 3 component position
+**'''[[Quaternion Class]]''' (<code>tdu.Quaternion</code>) - holds a quaternion object for 3D rotations
+**'''[[Timecode Class]]''' (<code>tdu.Timecode</code>) - holds a timecode value
+**'''[[Vector Class]]''' (<code>tdu.Vector</code>) - holds a 3 component vector
+
+*'''[[Licenses Class]]''' (<code>licenses</code>) - information about installed [[License Class|license]] objects
+**'''[[DongleList Class]]''' (<code>licenses.dongles</code>) - list of attached dongles
+***'''[[Dongle Class]]''' - an individual dongle connected to the system
+**'''[[License Class]]''' - a single instance of an installed license
+****'''[[ProductEntry Class]]''' - a dongle entry for a single dongle connected to the system
+*'''[[MOD Class]]''' (<code>mod</code>) - access to modules located in TouchDesigner DATs
+*'''[[Monitors Class]]''' (<code>monitors</code>) - access to information about all connected display devices
+**'''[[Monitor Class]]''' - an individual display device
+*'''[[Runs Class]]''' (<code>runs</code>) - information about all delayed [[Run Class|run objects]]
+**'''[[Run Class]]''' - an individual delayed run object
+*'''[[SysInfo Class]]''' (<code>sysInfo</code>) - current system/hardware information 
+*'''[[UI Class]]''' (<code>ui</code>) - information about application ui elements
+**'''[[Colors Class]]''' (<code>ui.colors</code>) - application colors
+**'''[[Options Class]]''' (<code>ui.options</code>) - configurable ui options
+**'''[[Panes Class]]''' (<code>ui.panes</code>) - collection of all panes open in the editor
+***'''[[Pane Class]]''' - an individual pane object
+****'''[[NetworkEditor Class]]''' - subclass of Pane that displays a network editor
+**'''[[Preferences Class]]''' (<code>ui.preferences</code>) - collection of TouchDesigner preferences
+**'''[[Undo Class]]''' (<code>ui.undo</code>) - tools for interacting with the undo system, including creating script-based undo steps
+
+=== Standard Python Modules ===
+The [[Td Module|<code>td</code> module]] also automatically imports a number of helpful standard modules, allowing them to be accessed in expressions through their namespace (e.g. <code>math.cos(math.pi)</code>):
+* [https://docs.python.org/3.7/library/collections.html <code>collections</code>] - container datatypes
+* [https://docs.python.org/3.7/library/enum.html <code>enum</code>] - support for enumerations
+* [https://docs.python.org/3.7/library/inspect.html <code>inspect</code>] - inspect live objects
+* [https://docs.python.org/3.7/library/math.html <code>math</code>] - mathematical functions
+* [https://docs.python.org/3.7/library/re.html <code>re</code>] - regular expression operations
+* [https://docs.python.org/3.7/library/sys.html <code>sys</code>] - OS specific data and functions
+* [https://docs.python.org/3.7/library/traceback.html <code>traceback</code>] - stack utilities
+* [https://docs.python.org/3.7/library/warnings.html <code>warnings</code>] - warning control
+
+=== TouchDesigner Utility Modules and Python Utilities ===
+The following contain extended Python utilities for use with TouchDesigner.
+* '''[[TDFunctions]]''' - A variety of utilities for advanced Python coding in TouchDesigner.
+* '''[[TDJSON]]''' - JSON utilities specific to TouchDesigner. 
+* '''[[TDStoreTools]]''' - utilities for use with TouchDesigner's [[Storage]] and [[Dependency]] system. 
+* '''[[TDResources]]''' (<code>op.TDResources...</code>) - not a module, but does contain system resources that can be accessed via Python. It includes system [[TDResources#Pop-Up_Menu|pop-up menu]], [[TDResources#Button_Pop-Up_Menu|button pop-up menu]], [[TDResources#Pop-Up_Dialog|pop-up dialog]], and [[TDResources#Mouse|mouse]] resources.
+
+
+=== 3rd Party Packages ===
+'''The following 3rd party packages are automatically installed with TouchDesigner.''' They are not in the [[Td Module|td module]], so must be imported explicitly to be used in scripts. The name in parentheses is the actual package name used (e.g. to use OpenCV, write this at top of script: <code>import cv2</code>). For information on adding or installing other Python modules, see [https://docs.derivative.ca/Introduction_to_Python_Tutorial#Importing_Modules Importing Modules].
+* '''[https://pypi.org/project/asn1crypto/ asn1crypto]''' (<code>asn1crypto</code>) - Parsing and serializing ASN.1 structures.
+* '''[https://www.attrs.orgs attrs]''' (<code>attr</code>) - Classes without boilerplate.
+* '''[https://pypi.org/project/certifi/ Certifi]''' (<code>certifi</code>) - Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+* '''[https://cffi.readthedocs.io/en/latest/ CFFI]''' (<code>cffi</code>) - Interaction with C code.
+* '''[https://pypi.org/project/chardet/ Chardet]''' (<code>chardet</code>) - The Universal Character Encoding Detector.
+* '''[https://pypi.org/project/charset-normalizer/ charset-normalizer]''' (<code>charset_normalizer</code>) - A library that helps you read text from an unknown charset encoding.
+* '''[https://cryptography.io/en/latest/# Cryptography]''' (<code>cryptography</code>) - High level recipes and low level interfaces to common cryptographic algorithms.
+* '''[https://https://github.com/micheles/decorator decorator]''' (<code>decorator</code>) - Define signature-preserving function decorators and decorator factories.
+* '''[https://pypi.org/project/oauthlib/ OAuthlib]''' (<code>oauthlib</code>) - Library to build OAuth and OpenID Connect servers.
+* '''[https://pypi.org/project/opencv-python/ opencv-python]''' (<code>cv2</code>) - Pre-built CPU-only OpenCV packages for Python.
+* '''[https://pypi.org/project/depthai/ depthai]''' (<code>depthai</code>) - Python bindings for C++ [https://docs.luxonis.com/projects/api/en/latest/ depthai-core library].
+* '''[https://pypi.org/project/idna/ idna]''' (<code>idna</code>) - Support for the Internationalised Domain Names in Applications (IDNA) protocol.
+* '''[https://pypi.org/project/jsonpath-ng/ jsonpath]''' (<code>jsonpath_ng</code>) - JSONPath tools for accessing and altering JSON structures.
+* '''[https://pypi.org/project/jsonschema/ jsonschema]''' (<code>jsonschema</code>) - jsonschema is an implementation of the [https://json-schema.org/ JSON Schema] specification for Python.
+* '''[https://mwparserfromhell.readthedocs.io/en/latest/ MWParserFromHell]''' (<code>mwparserfromhell</code>) - An easy-to-use and outrageously powerful parser for MediaWiki wikicode.
+* '''[http://www.numpy.org NumPy]''' (<code>numpy</code>) - Fundamental package for scientific computing with Python.
+* '''[https://opencv.org OpenCV]''' (<code>cv2</code>) - Open source computer vision.
+* '''[https://pypi.org/project/packaging/ packaging]''' (<code>packaging</code>) - Package tools including version handling, specifiers, markers, requirements, tags, utilities. Used for version string comparison.
+* '''[https://pypi.org/project/pip/ pip]''' (<code>pip</code>) - pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes.
+* '''[https://www.dabeaz.com/ply/ ply]''' (<code>ply</code>) - Parsing tools for lex and yacc.
+* '''[https://pypi.org/project/Pygments/ Pygments]''' (<code>pygments</code>) - A syntax highlighting package written in Python.
+* '''[https://pypi.org/project/pyparsing/ pyparsing]''' (<code>pyparsing</code>) - A library of classes that client code uses to construct parsing grammar directly in Python code.
+* '''[https://pypi.org/project/pyrankvote/ pyrankvote]''' (<code>pyrankvote</code>) - PyRankVote is a python library for different ranked-choice voting systems (sometimes called preferential voting systems) created by Jon Tingvold in June 2019.
+* '''[https://pypi.org/project/pyrsistent/ pyrsistent]''' (<code>pyrsistent</code>) - Pyrsistent is a number of persistent collections (by some referred to as functional data structures). Persistent in the sense that they are immutable.
+* '''[https://pyyaml.org/wiki/PyYAMLDocumentation PyYAML]''' (<code>yaml</code>) - YAML parser and emitter.
+* '''[http://docs.python-requests.org/en/master/ Requests]''' (<code>requests</code>) - The only Non-GMO HTTP library for Python, safe for human consumption
+* '''[https://requests-oauthlib.readthedocs.io/en/latest/index.html Requests OAuthlib]''' (<code>requests_oauthlib</code>) - Easy-to-use Python interface for building OAuth1 and OAuth2 clients
+* '''[https://pypi.org/project/six/ six]''' (<code>six</code>) - Python 2 and 3 compatibility utilities.
+* '''[https://pypi.org/project/smartypants/ smartypants]''' (<code>smartypants</code>) - a Python fork of [http://daringfireball.net/projects/smartypants/ SmartyPants].
+* '''[https://pypi.org/project/tabulate/ tabulate]''' (<code>tabulate</code>) - Pretty-print tabular data in Python.
+* '''[https://urllib3.readthedocs.io/en/latest/ urllib3]''' (<code>urllib3</code>) - HTTP client.
+* '''[https://pypi.org/project/whats-that-code/ whats-that-code]''' (<code>whats_that_code</code>) - programming language detection library.
+
+=== Installing Custom Packages and Modules ===
+
+You can also install your own Python packages that are not included with TouchDesigner. For instructions, go [[:Category:Python#Installing_Custom_Python_Packages|here]].
+
+[[Category: Python]]
+[[Category:TDPages]]
