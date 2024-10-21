@@ -115,7 +115,7 @@ The following contain extended Python utilities for use with TouchDesigner.
 * '''[https://pypi.org/project/certifi/ Certifi]''' (<code>certifi</code>) - Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
 * '''[https://pypi.org/project/chardet/ Chardet]''' (<code>chardet</code>) - The Universal Character Encoding Detector.
 * '''[https://pypi.org/project/charset-normalizer/ charset-normalizer]''' (<code>charset_normalizer</code>) - A library that helps you read text from an unknown charset encoding.
-* '''[https://https://github.com/micheles/decorator decorator]''' (<code>decorator</code>) - Define signature-preserving function decorators and decorator factories.
+* '''[https://github.com/micheles/decorator decorator]''' (<code>decorator</code>) - Define signature-preserving function decorators and decorator factories.
 * '''[https://pypi.org/project/oauthlib/ OAuthlib]''' (<code>oauthlib</code>) - Library to build OAuth and OpenID Connect servers.
 * '''[https://pypi.org/project/opencv-python/ opencv-python]''' (<code>cv2</code>) - Pre-built CPU-only OpenCV packages for Python.
 * '''[https://pypi.org/project/depthai/ depthai]''' (<code>depthai</code>) - Python bindings for C++ [https://docs.luxonis.com/projects/api/en/latest/ depthai-core library].
