@@ -111,13 +111,10 @@ The following contain extended Python utilities for use with TouchDesigner.
 
 === 3rd Party Packages ===
 '''The following 3rd party packages are automatically installed with TouchDesigner.''' They are not in the [[Td Module|td module]], so must be imported explicitly to be used in scripts. The name in parentheses is the actual package name used (e.g. to use OpenCV, write this at top of script: <code>import cv2</code>). For information on adding or installing other Python modules, see [https://docs.derivative.ca/Introduction_to_Python_Tutorial#Importing_Modules Importing Modules].
-* '''[https://pypi.org/project/asn1crypto/ asn1crypto]''' (<code>asn1crypto</code>) - Parsing and serializing ASN.1 structures.
 * '''[https://www.attrs.orgs attrs]''' (<code>attr</code>) - Classes without boilerplate.
 * '''[https://pypi.org/project/certifi/ Certifi]''' (<code>certifi</code>) - Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
-* '''[https://cffi.readthedocs.io/en/latest/ CFFI]''' (<code>cffi</code>) - Interaction with C code.
 * '''[https://pypi.org/project/chardet/ Chardet]''' (<code>chardet</code>) - The Universal Character Encoding Detector.
 * '''[https://pypi.org/project/charset-normalizer/ charset-normalizer]''' (<code>charset_normalizer</code>) - A library that helps you read text from an unknown charset encoding.
-* '''[https://cryptography.io/en/latest/# Cryptography]''' (<code>cryptography</code>) - High level recipes and low level interfaces to common cryptographic algorithms.
 * '''[https://https://github.com/micheles/decorator decorator]''' (<code>decorator</code>) - Define signature-preserving function decorators and decorator factories.
 * '''[https://pypi.org/project/oauthlib/ OAuthlib]''' (<code>oauthlib</code>) - Library to build OAuth and OpenID Connect servers.
 * '''[https://pypi.org/project/opencv-python/ opencv-python]''' (<code>cv2</code>) - Pre-built CPU-only OpenCV packages for Python.
