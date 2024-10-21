@@ -111,7 +111,7 @@ The following contain extended Python utilities for use with TouchDesigner.
 
 === 3rd Party Packages ===
 '''The following 3rd party packages are automatically installed with TouchDesigner.''' They are not in the [[Td Module|td module]], so must be imported explicitly to be used in scripts. The name in parentheses is the actual package name used (e.g. to use OpenCV, write this at top of script: <code>import cv2</code>). For information on adding or installing other Python modules, see [https://docs.derivative.ca/Introduction_to_Python_Tutorial#Importing_Modules Importing Modules].
-* '''[https://www.attrs.orgs attrs]''' (<code>attr</code>) - Classes without boilerplate.
+* '''[https://www.attrs.org attrs]''' (<code>attr</code>) - Classes without boilerplate.
 * '''[https://pypi.org/project/certifi/ Certifi]''' (<code>certifi</code>) - Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
 * '''[https://pypi.org/project/chardet/ Chardet]''' (<code>chardet</code>) - The Universal Character Encoding Detector.
 * '''[https://pypi.org/project/charset-normalizer/ charset-normalizer]''' (<code>charset_normalizer</code>) - A library that helps you read text from an unknown charset encoding.
