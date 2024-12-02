@@ -124,7 +124,6 @@ The following contain extended Python utilities for use with TouchDesigner.
 * '''[https://pypi.org/project/jsonschema/ jsonschema]''' (<code>jsonschema</code>) - jsonschema is an implementation of the [https://json-schema.org/ JSON Schema] specification for Python.
 * '''[https://mwparserfromhell.readthedocs.io/en/latest/ MWParserFromHell]''' (<code>mwparserfromhell</code>) - An easy-to-use and outrageously powerful parser for MediaWiki wikicode.
 * '''[http://www.numpy.org NumPy]''' (<code>numpy</code>) - Fundamental package for scientific computing with Python.
-* '''[https://opencv.org OpenCV]''' (<code>cv2</code>) - Open source computer vision.
 * '''[https://pypi.org/project/packaging/ packaging]''' (<code>packaging</code>) - Package tools including version handling, specifiers, markers, requirements, tags, utilities. Used for version string comparison.
 * '''[https://pypi.org/project/pip/ pip]''' (<code>pip</code>) - pip is the package installer for Python. You can use pip to install packages from the Python Package Index and other indexes.
 * '''[https://www.dabeaz.com/ply/ ply]''' (<code>ply</code>) - Parsing tools for lex and yacc.
